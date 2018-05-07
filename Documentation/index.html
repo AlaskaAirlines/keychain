@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Keychain  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Keychain  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Keychain Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Keychain Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Keychain  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/KeychainError.html">KeychainError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/KeychainItem.html">KeychainItem</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Keychain.html">Keychain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Keychain/Access.html">– Access</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Keychain/Storage.html">– Storage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Keychain/Configuration.html">– Configuration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:8Keychain0A5Querya">KeychainQuery</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h2 id='overview' class='heading'>Overview</h2>
+
+<blockquote>
+<p>Supports iOS only.  </p>
+</blockquote>
+
+<p>Keychain is a wrapper library built around a small subset of features offered by Keychain Services to simplify saving and retrieving data to and from the iOS Keychain using <code>kSecClassGenericPassword</code> class.</p>
+
+<p>While the Keychain Services offer comprehensive set of APIs and could be used directly, the app-side implementation for saving and retrieving data will most likely be verbose.</p>
+
+<p>In a nutshell, to securely store an item using Keychain Services, a dictionary of predefined keys and values, also referred to as the <em>keychain query</em>, must be created first. This query must contain valid values for predefined set of keys that depend on a security class being used. To reduce the amount of manual work required to create a keychain query, this framework takes advantage of Swift features such as default implementation for protocols, generics and <code>Codable</code> for automatic encoding of models into external representation.</p>
+
+<p>This approach leads to a much cleaner interaction with iOS Keychain that&rsquo;s enjoyable to use.</p>
+<h2 id='features' class='heading'>Features</h2>
+
+<ul>
+<li>[x] Simple to setup, easy to use &amp; efficient</li>
+<li>[x] Supports custom data types</li>
+<li>[x] Supports storing multiple instances of the same type</li>
+<li>[x] Supports app and group-specific keychain configurations</li>
+<li>[x] Handles object encoding and decoding from data returned by the iOS keychain</li>
+<li>[x] Comprehensive Unit Test Coverage</li>
+<li>[x] Complete Documentation</li>
+</ul>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<ul>
+<li>iOS 10.0+</li>
+<li>Xcode 9.0+</li>
+<li>Swift 4.0+</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<p>Carthage is the only supported way to install Keychain framework.</p>
+<pre class="highlight plaintext"><code>github "AlaskaAirlines/Keychain" ~&gt; 1.0.0
+</code></pre>
+
+<p>For more information on getting started with Carthage, visit the <a href="https://github.com/Carthage/Carthage">repo</a>.</p>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>Keychain framework currently supports two access types - App Specific and Group Specific. The iCloud sync support across multiple devices will be added later.</p>
+
+<p>Getting started is easy. First, create the keychain instance using one of the supported access types.</p>
+<pre class="highlight plaintext"><code>let keychain = Keychain(access: .appSpecific(serviceName: "App"))
+</code></pre>
+
+<p>Any custom type you want to encrypt and store in iOS Keychain needs to conform and implement the <code><a href="Protocols/KeychainItem.html">KeychainItem</a></code> protocol. The <code><a href="Protocols/KeychainItem.html">KeychainItem</a></code> protocol provides default implementation for all of its properties - except the <code>idKey</code>. See documentation for more information.</p>
+<pre class="highlight plaintext"><code>struct User: KeychainItem {
+    let username: String
+    let password: String
+
+    // MARK: KeychainItem
+
+    var idKey: String {
+        return username
+    }
+}
+</code></pre>
+
+<p>Keychain offers a handful of methods that will allow you to save, delete, or retrieve items.</p>
+<pre class="highlight plaintext"><code>let user = User(username: "username", password: "password")
+
+// save
+try? keychain.save(user)
+
+// retrieve users
+let users = try? keychain.items(ofType: User.self)
+
+// retrieve a single user
+let user = try? keychain.item(ofType: User.self, idKey: "username")
+</code></pre>
+
+<p>For group specific configuration, please see documentation.</p>
+<h2 id='performance' class='heading'>Performance</h2>
+
+<p>The following tests were performed on an iPad Mini 4 WiFi + Cellular. The numbers are the average for performing each operation 3000 times.</p>
+
+<ul>
+<li>Deleting: 0.00662</li>
+<li>Inserting: 0.00862</li>
+<li>Reading: 0.00291</li>
+<li>Replacing: 0.00858</li>
+</ul>
+<h2 id='communication' class='heading'>Communication</h2>
+
+<ul>
+<li>If you found a bug, open an issue.</li>
+<li>If you have a feature request, open an issue.</li>
+<li>If you want to contribute, submit a pull request.</li>
+</ul>
+<h2 id='authors' class='heading'>Authors</h2>
+
+<ul>
+<li><a href="https://github.com/michaelbabiy">Michael Babiy</a></li>
+</ul>
+<h2 id='contributors' class='heading'>Contributors</h2>
+
+<ul>
+<li><a href="https://github.com/awallraff">Adam Wallraff</a></li>
+<li>Krishna Varma</li>
+</ul>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-03-08)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

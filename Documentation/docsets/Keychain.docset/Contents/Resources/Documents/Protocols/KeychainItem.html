@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KeychainItem Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/KeychainItem" class="dashAnchor"></a>
+    <a title="KeychainItem Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Keychain Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Keychain Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        KeychainItem Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/KeychainError.html">KeychainError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/KeychainItem.html">KeychainItem</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Keychain.html">Keychain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Keychain/Access.html">– Access</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Keychain/Storage.html">– Storage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Keychain/Configuration.html">– Configuration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Keychain0A5Querya">KeychainQuery</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>KeychainItem</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">KeychainItem</span><span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                </div>
+              </div>
+            <p>A type that can represent conforming model as a <strong>KeychainItem</strong>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Keychain0A4ItemP7commentSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/comment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Keychain0A4ItemP7commentSSSgv">comment</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The instance comment saved as an attribute on a <strong>Keychain</strong> item using <strong>kSecAttrComment</strong> key.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The default valus is <strong>nil</strong>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">comment</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Keychain0A4ItemP11descriptionSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Keychain0A4ItemP11descriptionSSSgv">description</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The instance description saved as an attribute on a <strong>Keychain</strong> item using <strong>kSecAttrDescription</strong> key.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The default valus is <strong>nil</strong>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Keychain0A4ItemP5idKeySSv"></a>
+                    <a name="//apple_ref/swift/Property/idKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Keychain0A4ItemP5idKeySSv">idKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The instance identifier saved as an attribute on a <strong>Keychain</strong> item using <strong>kSecAttrAccount</strong> key.</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>If you intend to store multiple instances of the same type, <code>idKey</code> must be unique to each instance.
+Failing to do so will result in having previously saved instance maching this <code>idKey</code> overriden.</p>
+
+</div>
+<li><p>Consider this implementation:</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">User</span><span class="p">:</span> <span class="kt">KeychainItem</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span>
+
+  <span class="c1">// MARK: KeychainItem</span>
+
+  <span class="k">var</span> <span class="nv">idKey</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">email</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>In the above example, the <code>idKey</code> is set to be the email address of the user.
+You can use the <code>idKey</code> later to perform a search like this:</p></li>
+<pre class="highlight swift"><code>  <span class="k">try</span> <span class="n">keychain</span><span class="o">.</span><span class="nf">item</span><span class="p">(</span><span class="nv">ofType</span><span class="p">:</span> <span class="kt">User</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">idKey</span><span class="p">:</span> <span class="s">"email@alaskaair.com"</span><span class="p">)</span>
+</code></pre>
+
+<p>If only a single instance of a type will be stored, the <code>idKey</code> can be set using <code><a href="../Protocols/KeychainItem.html#/s:8Keychain0A4ItemP7typeKeySSvZ">typeKey</a></code>.</p>
+<pre class="highlight swift"><code>  <span class="kd">struct</span> <span class="kt">SSOCredential</span><span class="p">:</span> <span class="kt">KeychainItem</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">accessToken</span><span class="p">:</span> <span class="kt">String</span>
+
+      <span class="c1">// MARK: KeychainItem</span>
+
+      <span class="k">var</span> <span class="nv">idKey</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="kt">SSOCredential</span><span class="o">.</span><span class="n">typeKey</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">idKey</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Keychain0A4ItemP7storageA2AV7StorageOvZ"></a>
+                    <a name="//apple_ref/swift/Variable/storage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Keychain0A4ItemP7storageA2AV7StorageOvZ">storage</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The storage option of the item for specifying <strong>Keychain</strong> storage type using <strong>kSecClass</strong> key.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The default value is <strong>.genericPassword</strong>.
+
+</div>
+
+<p>This <strong>Keychain</strong> framework only supports <strong>kSecClassGenericPassword</strong> for now.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">storage</span><span class="p">:</span> <span class="kt"><a href="../Structs/Keychain.html">Keychain</a></span><span class="o">.</span><span class="kt">Storage</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Keychain0A4ItemP7typeKeySSvZ"></a>
+                    <a name="//apple_ref/swift/Variable/typeKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Keychain0A4ItemP7typeKeySSvZ">typeKey</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The type identifier saved as an attribute on a <strong>Keychain</strong> item using <strong>kSecAttrType</strong> key.
+Used for identifying instances of the same type.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The default value is the description of a type conforming to <strong>KeychainItem</strong> protocol.
+
+</div>
+<pre class="highlight swift"><code>  <span class="kd">static</span> <span class="k">var</span> <span class="nv">typeKey</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">typeKey</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Keychain0A4ItemP4data10Foundation4DataVyKF"></a>
+                    <a name="//apple_ref/swift/Method/data()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Keychain0A4ItemP4data10Foundation4DataVyKF">data()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The instance data saved as an attribute on a <strong>Keychain</strong> item using <strong>kSecValueData</strong> key.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The default value is the encoded instance using the <strong>PropertyListEncoder</strong>.
+
+</div>
+<pre class="highlight swift"><code>  <span class="kd">func</span> <span class="nf">data</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">try</span> <span class="kt">PropertyListEncoder</span><span class="p">()</span><span class="o">.</span><span class="nf">encode</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">data</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Keychain0A4ItemPAAE5querys10DictionaryVySSyXlGA2AV13ConfigurationV5using_tKF"></a>
+                    <a name="//apple_ref/swift/Method/query(using:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Keychain0A4ItemPAAE5querys10DictionaryVySSyXlGA2AV13ConfigurationV5using_tKF">query(using:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates and returns <strong>KeychainQuery</strong> instance object composed from configuration and item data.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">query</span><span class="p">(</span><span class="n">using</span> <span class="nv">configuration</span><span class="p">:</span> <span class="kt"><a href="../Structs/Keychain.html">Keychain</a></span><span class="o">.</span><span class="kt">Configuration</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:8Keychain0A5Querya">KeychainQuery</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>configuration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The configuration of the <strong>Keychain</strong>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The <strong>KeychainQuery</strong> object.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Keychain0A4ItemPAAE5querys10DictionaryVySSyXlGA2AV13ConfigurationV5using_tKFZ"></a>
+                    <a name="//apple_ref/swift/Method/query(using:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Keychain0A4ItemPAAE5querys10DictionaryVySSyXlGA2AV13ConfigurationV5using_tKFZ">query(using:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates and returns <strong>KeychainQuery</strong> static object composed from configuration and item data.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">query</span><span class="p">(</span><span class="n">using</span> <span class="nv">configuration</span><span class="p">:</span> <span class="kt"><a href="../Structs/Keychain.html">Keychain</a></span><span class="o">.</span><span class="kt">Configuration</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:8Keychain0A5Querya">KeychainQuery</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>configuration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The configuration of the <strong>Keychain</strong>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The <strong>KeychainQuery</strong> object.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-03-08)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
