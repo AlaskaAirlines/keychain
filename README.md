@@ -31,7 +31,7 @@ This approach leads to a much cleaner interaction with iOS Keychain that's enjoy
 Carthage is the only supported way to install Keychain framework.
 
 ```
-git "https://itsals.visualstudio.com/AirportCustomerExperience/_git/Keychain" "v1.0.0"
+git "https://github.com/AlaskaAirlines/keychain" "v1.0.0"
 ```
 
 For more information on getting started with Carthage, visit the [repo](https://github.com/Carthage/Carthage).
