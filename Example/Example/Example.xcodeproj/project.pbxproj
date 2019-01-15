@@ -25,6 +25,7 @@
 		1CC619602033AD5A00996EC6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6195F2033AD5A00996EC6 /* Item.swift */; };
 		1CDD5191203E1D030050E179 /* KeychainDeleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDD5190203E1D030050E179 /* KeychainDeleteTests.swift */; };
 		1CEB5689203E0058008B740E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEB5688203E0058008B740E /* Card.swift */; };
+		4CD1635E21ED8FDE00B44EBB /* Keychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD1635D21ED8FDE00B44EBB /* Keychain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		1CC6195F2033AD5A00996EC6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1CDD5190203E1D030050E179 /* KeychainDeleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainDeleteTests.swift; sourceTree = "<group>"; };
 		1CEB5688203E0058008B740E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4CD1635D21ED8FDE00B44EBB /* Keychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Keychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD1635E21ED8FDE00B44EBB /* Keychain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +167,7 @@
 				1C579609202BB0DD008F939A /* Example */,
 				1C41F554203D3A160034017C /* KeychainTests */,
 				1C579608202BB0DD008F939A /* Products */,
+				4CD1635C21ED8FDE00B44EBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +235,14 @@
 				1CC6195F2033AD5A00996EC6 /* Item.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4CD1635C21ED8FDE00B44EBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CD1635D21ED8FDE00B44EBB /* Keychain.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
