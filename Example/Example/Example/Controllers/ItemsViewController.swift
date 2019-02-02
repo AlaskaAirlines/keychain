@@ -30,8 +30,12 @@ class ItemsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        queryKeychain()
+    }
 
-        // Query for new data.
+    // MARK: IBActions
+
+    @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
         queryKeychain()
     }
 }
