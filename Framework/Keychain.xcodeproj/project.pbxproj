@@ -22,6 +22,7 @@
 		1CC6E5012034CBB200F9A80F /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6E5002034CBB200F9A80F /* KeychainError.swift */; };
 		1CC6E5032034CEC900F9A80F /* Data+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6E5022034CEC900F9A80F /* Data+Additions.swift */; };
 		1CFF46B02033A54B007BE585 /* Keychain+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFF46AF2033A54B007BE585 /* Keychain+Manager.swift */; };
+		4CDEF37C22063F9600D7DAD8 /* Bool+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF37B22063F9600D7DAD8 /* Bool+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		1CC6E5002034CBB200F9A80F /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		1CC6E5022034CEC900F9A80F /* Data+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Additions.swift"; sourceTree = "<group>"; };
 		1CFF46AF2033A54B007BE585 /* Keychain+Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+Manager.swift"; sourceTree = "<group>"; };
+		4CDEF37B22063F9600D7DAD8 /* Bool+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		1CC6E4ED2034B37300F9A80F /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				4CDEF37B22063F9600D7DAD8 /* Bool+Additions.swift */,
 				1CC6E4EE2034B38D00F9A80F /* CFString+Additions.swift */,
 				1CC6E5022034CEC900F9A80F /* Data+Additions.swift */,
 				1C979681203CD2B700A78F16 /* Dictionary+Additions.swift */,
@@ -281,6 +284,7 @@
 				1C979682203CD2B700A78F16 /* Dictionary+Additions.swift in Sources */,
 				1C0FF7602033583900682B8C /* KeychainItem.swift in Sources */,
 				1CC6E4FD2034C77700F9A80F /* String+Additions.swift in Sources */,
+				4CDEF37C22063F9600D7DAD8 /* Bool+Additions.swift in Sources */,
 				1CC6E4F52034B7D300F9A80F /* Keychain+Storage.swift in Sources */,
 				1C6B27CA203383FD003D1AAE /* Keychain+Configuration.swift in Sources */,
 				1CC6E5012034CBB200F9A80F /* KeychainError.swift in Sources */,

@@ -14,28 +14,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import Keychain
+import Foundation
 
-/// Arbitrary item model object conforming to **KeychainItem** protocol.
-struct Item {
-    /// The website address to save username and password for.
-    let website: String
-
-    /// The username to save for the entered website address.
-    let username: String
-
-    /// The password to save for the entered website address.
-    let password: String
-}
-
-// MARK: KeychainItem
-
-extension Item: KeychainItem {
-    var idKey: String {
-        return website
-    }
-
-    static var isSynchronizable: Bool {
-        return true
+internal extension Bool {
+    /// Convenience variable for returning Swift bool as AnyObject.
+    var object: AnyObject {
+        return self as AnyObject
     }
 }

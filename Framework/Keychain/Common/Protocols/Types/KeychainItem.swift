@@ -64,6 +64,15 @@ public protocol KeychainItem: Codable {
     ///   ````
     var idKey: String { get }
 
+    /// A boolean value indicating whether the item is synchronized through iCloud.
+    ///
+    /// Updating or deleting items will affect all copies of the item, not just the one on your local device.
+    ///
+    /// For more information when specifying **isSynchronizable** see Documentation for **kSecAttrSynchronizable** key.
+    ///
+    /// Setting `isSynchronizable` to `true` will enable iCloud sync.
+    static var isSynchronizable: Bool { get }
+
     /// The storage option of the item for specifying **Keychain** storage type using **kSecClass** key.
     static var storage: Keychain.Storage { get }
 

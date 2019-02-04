@@ -30,6 +30,12 @@ public extension KeychainItem {
     }
 
     /// - Note:
+    ///   The default valus is **false**.
+    static var isSynchronizable: Bool {
+        return false
+    }
+
+    /// - Note:
     ///   The default value is **.genericPassword**.
     ///
     ///   This **Keychain** framework only supports **kSecClassGenericPassword** for now.

@@ -16,6 +16,7 @@ This approach leads to a much cleaner interaction with iOS Keychain that's enjoy
 - [x] Supports custom data types
 - [x] Supports storing multiple instances of the same type
 - [x] Supports app and group-specific keychain configurations
+- [x] Supports selective Type synchronization through iCloud
 - [x] Handles object encoding and decoding from data returned by the iOS keychain
 - [x] Comprehensive Unit Test Coverage
 - [x] Complete Documentation
@@ -38,7 +39,7 @@ For more information on getting started with Carthage, visit the [repo](https://
 
 
 ## Usage
-Keychain framework currently supports two access types - App Specific and Group Specific. The iCloud sync support across multiple devices will be added later.
+Keychain framework currently supports two access types - App Specific and Group Specific.
 
 Getting started is easy. First, create the keychain instance using one of the supported access types.
 
@@ -49,7 +50,7 @@ let keychain = Keychain(access: .appSpecific(serviceName: "App"))
 Any custom type you want to encrypt and store in iOS Keychain needs to conform and implement the `KeychainItem` protocol. The `KeychainItem` protocol provides default implementation for all of its properties - except the `idKey`. See documentation for more information.
 
 ```
-struct User: KeychainItem {
+struct Credential: KeychainItem {
     let username: String
     let password: String
 

@@ -26,6 +26,7 @@ internal extension KeychainItem {
     internal func query(using configuration: Keychain.Configuration) throws -> KeychainQuery {
         var query = KeychainQuery()
         query[kSecClass.string] = Self.storage.kSecClass
+        query[kSecAttrSynchronizable.string] = Self.isSynchronizable.object
         query[kSecAttrType.string] = Self.typeKey.object
 
         query[kSecAttrAccount.string] = idKey.object
@@ -49,6 +50,7 @@ internal extension KeychainItem {
     internal static func query(using configuration: Keychain.Configuration) throws -> KeychainQuery {
         var query = KeychainQuery()
         query[kSecClass.string] = Self.storage.kSecClass
+        query[kSecAttrSynchronizable.string] = Self.isSynchronizable.object
         query[kSecAttrType.string] = Self.typeKey.object
 
         // Values from configuration.
