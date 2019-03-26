@@ -20,7 +20,7 @@ import Foundation
 
 public extension Keychain {
     /// List of supported storage options for **Keychain**.
-    public enum Storage {
+    enum Storage {
         /// Item will be stored as encrypted, generic passwords.
         case genericPassword
     }
@@ -28,7 +28,7 @@ public extension Keychain {
 
 internal extension Keychain.Storage {
     /// C string value for a given Storage case.
-    internal var kSecClass: CFString {
+    var kSecClass: CFString {
         switch self {
         case .genericPassword:
             return kSecClassGenericPassword

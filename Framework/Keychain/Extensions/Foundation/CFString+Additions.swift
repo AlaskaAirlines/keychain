@@ -18,7 +18,7 @@ import Foundation
 
 internal extension CFString {
     /// Convenience variable for returning C string as Swift string.
-    internal var string: String {
+    var string: String {
         return self as String
     }
 }

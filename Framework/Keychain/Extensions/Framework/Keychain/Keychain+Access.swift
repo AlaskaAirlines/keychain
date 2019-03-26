@@ -18,7 +18,7 @@ import Foundation
 
 public extension Keychain {
     /// List of supported access options for configuring **Keychain**.
-    public enum Access {
+    enum Access {
         /// Will configure **Keychain** to be specific to each app.
         case appSpecific(serviceName: String)
 
@@ -31,7 +31,7 @@ public extension Keychain {
 
 internal extension Keychain.Access {
     /// Configuration data for the **Keychain** instance.
-    internal var configuration: Keychain.Configuration {
+    var configuration: Keychain.Configuration {
         switch self {
         case .appSpecific(let serviceName):
             return Keychain.Configuration(serviceName: serviceName)
