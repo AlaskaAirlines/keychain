@@ -18,7 +18,7 @@ import Foundation
 
 internal extension Keychain {
     /// A type that represents configuration object for the **Keychain** instance.
-    internal struct Configuration {
+    struct Configuration {
         /// The access group if any.
         ///
         /// - Note:

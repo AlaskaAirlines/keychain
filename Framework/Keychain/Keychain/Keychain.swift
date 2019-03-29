@@ -41,7 +41,7 @@ public extension Keychain {
     ///   - item: The item to delete.
     ///
     /// - Throws: **KeychainError.unhandled** containing **OSStatus** code.
-    public func delete(_ item: KeychainItem) throws {
+    func delete(_ item: KeychainItem) throws {
         try manager.delete(item)
     }
     
@@ -61,7 +61,7 @@ public extension Keychain {
     ///   - type: A generic type of the item.
     ///
     /// - Throws: **KeychainError.unhandled** containing **OSStatus** code.
-    public func deleteAll<T: KeychainItem>(ofType type: T.Type) throws {
+    func deleteAll<T: KeychainItem>(ofType type: T.Type) throws {
         try manager.deleteAll(ofType: type)
     }
 
@@ -102,7 +102,7 @@ public extension Keychain {
     ///   - item: The item to save.
     ///
     /// - Throws: **KeychainError** if the operation fails.
-    public func save(_ item: KeychainItem) throws {
+    func save(_ item: KeychainItem) throws {
         try manager.save(item)
     }
 
@@ -115,7 +115,7 @@ public extension Keychain {
     /// - Throws: **KeychainError** if the operation fails.
     ///
     /// - Returns: A newly created item of T.Type if data is found for specified **idKey**, nil otherwise.
-    public func item<T: KeychainItem>(ofType type: T.Type, idKey: String) throws -> T? {
+    func item<T: KeychainItem>(ofType type: T.Type, idKey: String) throws -> T? {
         return try manager.item(ofType: type, idKey: idKey)
     }
 
@@ -127,7 +127,7 @@ public extension Keychain {
     /// - Throws: **KeychainError** if the operation fails.
     ///
     /// - Returns: A newly created items array of T.Type if data is found, nil otherwise.
-    public func items<T: KeychainItem>(ofType type: T.Type) throws -> [T]? {
+    func items<T: KeychainItem>(ofType type: T.Type) throws -> [T]? {
         return try manager.items(ofType: type)
     }
 }

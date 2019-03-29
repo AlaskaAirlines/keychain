@@ -18,7 +18,7 @@ import Foundation
 
 internal extension Keychain {
     /// Responsible for saving, deleting, and searching the **Keychain**.
-    internal struct Manager {
+    struct Manager {
         /// The **Keychain** configuration data derived from **Keychain.Access** type.
         private let configuration: Keychain.Configuration
 
@@ -38,7 +38,7 @@ internal extension Keychain.Manager {
     /// Deletes item from the **Keychain**.
     ///
     /// For documentation see: Keychain.delete()
-    internal func delete(_ item: KeychainItem) throws {
+    func delete(_ item: KeychainItem) throws {
         let query = try item.query(using: configuration).CFDictionary
         let status = SecItemDelete(query)
 
@@ -49,14 +49,14 @@ internal extension Keychain.Manager {
     /// Deletes all items of specified type.
     ///
     /// For documentation see: Keychain.deleteAll()
-    internal func deleteAll<T: KeychainItem>(ofType type: T.Type) throws {
+    func deleteAll<T: KeychainItem>(ofType type: T.Type) throws {
         try items(ofType: type)?.forEach { try delete($0) }
     }
 
     /// Saves item to the **Keychain**.
     ///
     /// For documentation see: Keychain.save()
-    internal func save(_ item: KeychainItem) throws {
+    func save(_ item: KeychainItem) throws {
         // Try deleting previously saved item object matching this item query.
         try delete(item)
 
@@ -71,14 +71,14 @@ internal extension Keychain.Manager {
     /// Returns an item for specified account and service group using **idKey**.
     ///
     /// For documentation see: Keychain.item()
-    internal func item<T: KeychainItem>(ofType type: T.Type, idKey: String) throws -> T? {
+    func item<T: KeychainItem>(ofType type: T.Type, idKey: String) throws -> T? {
         return try items(ofType: type)?.filter { $0.idKey == idKey }.first
     }
 
     /// Returns an array of items for specified account and service group.
     ///
     /// For documentation see: Keychain.items()
-    internal func items<T: KeychainItem>(ofType type: T.Type) throws -> [T]? {
+    func items<T: KeychainItem>(ofType type: T.Type) throws -> [T]? {
         let query = try type.query(using: configuration)
 
         var result: AnyObject?

@@ -23,7 +23,7 @@ internal extension KeychainItem {
     ///   - configuration: The configuration of the **Keychain**.
     ///
     /// - Returns: The **KeychainQuery** object.
-    internal func query(using configuration: Keychain.Configuration) throws -> KeychainQuery {
+    func query(using configuration: Keychain.Configuration) throws -> KeychainQuery {
         var query = KeychainQuery()
         query[kSecClass.string] = Self.storage.kSecClass
         query[kSecAttrSynchronizable.string] = Self.isSynchronizable.object
@@ -47,7 +47,7 @@ internal extension KeychainItem {
     ///   - configuration: The configuration of the **Keychain**.
     ///
     /// - Returns: The **KeychainQuery** object.
-    internal static func query(using configuration: Keychain.Configuration) throws -> KeychainQuery {
+    static func query(using configuration: Keychain.Configuration) throws -> KeychainQuery {
         var query = KeychainQuery()
         query[kSecClass.string] = Self.storage.kSecClass
         query[kSecAttrSynchronizable.string] = Self.isSynchronizable.object
