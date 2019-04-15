@@ -22,6 +22,7 @@
 		1CC6E5012034CBB200F9A80F /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6E5002034CBB200F9A80F /* KeychainError.swift */; };
 		1CC6E5032034CEC900F9A80F /* Data+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6E5022034CEC900F9A80F /* Data+Additions.swift */; };
 		1CFF46B02033A54B007BE585 /* Keychain+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFF46AF2033A54B007BE585 /* Keychain+Manager.swift */; };
+		4C7B7B42226407E8008EBB0B /* OSStatus+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B7B41226407E8008EBB0B /* OSStatus+Additions.swift */; };
 		4CDEF37C22063F9600D7DAD8 /* Bool+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF37B22063F9600D7DAD8 /* Bool+Additions.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		1CC6E5002034CBB200F9A80F /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		1CC6E5022034CEC900F9A80F /* Data+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Additions.swift"; sourceTree = "<group>"; };
 		1CFF46AF2033A54B007BE585 /* Keychain+Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+Manager.swift"; sourceTree = "<group>"; };
+		4C7B7B41226407E8008EBB0B /* OSStatus+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSStatus+Additions.swift"; sourceTree = "<group>"; };
 		4CDEF37B22063F9600D7DAD8 /* Bool+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				1CC6E4EE2034B38D00F9A80F /* CFString+Additions.swift */,
 				1CC6E5022034CEC900F9A80F /* Data+Additions.swift */,
 				1C979681203CD2B700A78F16 /* Dictionary+Additions.swift */,
+				4C7B7B41226407E8008EBB0B /* OSStatus+Additions.swift */,
 				1CC6E4FC2034C77700F9A80F /* String+Additions.swift */,
 			);
 			path = Foundation;
@@ -278,6 +281,7 @@
 				1CFF46B02033A54B007BE585 /* Keychain+Manager.swift in Sources */,
 				1CC6E4F82034BAF000F9A80F /* Definitions.swift in Sources */,
 				1CC6E4F12034B59100F9A80F /* KeychainItem+Query.swift in Sources */,
+				4C7B7B42226407E8008EBB0B /* OSStatus+Additions.swift in Sources */,
 				1CC6E5032034CEC900F9A80F /* Data+Additions.swift in Sources */,
 				1C8ACB27203E5BEF00F0B8C9 /* KeychainItem+Implementation.swift in Sources */,
 				1CC6E4EF2034B38D00F9A80F /* CFString+Additions.swift in Sources */,
@@ -347,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -403,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
