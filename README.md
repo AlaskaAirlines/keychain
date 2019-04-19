@@ -24,8 +24,8 @@ This approach leads to a much cleaner interaction with iOS Keychain that's enjoy
 
 ## Requirements
 * iOS 10.0+
-* Xcode 9.0+
-* Swift 4.0+
+* Xcode 10.2+
+* Swift 5.0+
 
 
 ## Installation
