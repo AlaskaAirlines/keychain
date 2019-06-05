@@ -29,13 +29,21 @@ This approach leads to a much cleaner interaction with iOS Keychain that's enjoy
 
 
 ## Installation
-Carthage is the only supported way to install Keychain framework.
+
+### Carthage
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate Keychain into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```
-git "https://github.com/AlaskaAirlines/keychain" "v1.0.0"
+git "https://github.com/AlaskaAirlines/keychain" ~> 1.0.0
 ```
 
 For more information on getting started with Carthage, visit the [repo](https://github.com/Carthage/Carthage).
+
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler.
+
+Once you have your Swift package set up, adding Keychain as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
 
 
 ## Usage
