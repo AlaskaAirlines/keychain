@@ -18,10 +18,10 @@ import XCTest
 @testable import Keychain
 
 class KeychainConfigurationTests: KeychainBaseCase {
-    func testKeychain_AccessTypeReturnsCorrectConfiguration() {
+    func testKeychain_SetupOptionReturnsCorrectConfiguration() {
         // Given, When
-        let appSpecific: Keychain.Access = .appSpecific(serviceName: "AppName")
-        let groupSpecific: Keychain.Access = .groupSpecific(accessGroup: "ABC.com.app.example", serviceName: "AppName")
+        let appSpecific: Keychain.SetupOption = .appSpecific(access: .always, serviceName: "AppName")
+        let groupSpecific: Keychain.SetupOption = .groupSpecific(access: .always, accessGroup: "ABC.com.app.example", serviceName: "AppName")
 
         // Then
         XCTAssertNil(appSpecific.configuration.accessGroup)

@@ -18,7 +18,5 @@ import Foundation
 
 internal extension Data {
     /// Convenience variable for returning Swift Data as AnyObject.
-    var object: AnyObject {
-        return self as AnyObject
-    }
+    var object: AnyObject { self as AnyObject }
 }

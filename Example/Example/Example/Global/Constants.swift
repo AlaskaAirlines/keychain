@@ -18,5 +18,5 @@ import Keychain
 
 /// Global Keychain instance.
 let keychain: Keychain = {
-    return Keychain(access: .appSpecific(serviceName: "Example"))
+    Keychain(.appSpecific(access: .afterFirstUnlock, serviceName: "Example"))
 }()

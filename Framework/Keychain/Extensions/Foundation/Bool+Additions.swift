@@ -18,7 +18,5 @@ import Foundation
 
 internal extension Bool {
     /// Convenience variable for returning Swift bool as AnyObject.
-    var object: AnyObject {
-        return self as AnyObject
-    }
+    var object: AnyObject { self as AnyObject }
 }

@@ -19,6 +19,9 @@ import Foundation
 internal extension Keychain {
     /// A type that represents configuration object for the **Keychain** instance.
     struct Configuration {
+        /// The value indicates when a keychain item is accessible.
+        internal let access: Access
+
         /// The access group if any.
         ///
         /// - Note:
@@ -38,9 +41,11 @@ internal extension Keychain {
         /// Creates a **Keychain** configuration given the provided parameters.
         ///
         /// - Parameters:
+        ///   - access:      The value indicates when a keychain item is accessible.
         ///   - accessGroup: The access group if any.
         ///   - serviceName: The service name.
-        internal init(accessGroup: String? = nil, serviceName: String) {
+        internal init(access: Keychain.Access, accessGroup: String? = nil, serviceName: String) {
+            self.access = access
             self.accessGroup = accessGroup
             self.serviceName = serviceName
         }

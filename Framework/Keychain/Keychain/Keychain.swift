@@ -18,19 +18,19 @@ import Foundation
 
 /// Provides and coordinates saving and retrieving data from the **Keychain**.
 public struct Keychain {
-    /// The access type of the **Keychain**.
-    public let access: Keychain.Access
-
     /// The **Keychain** manager instance for saving, retrieving, and deleting **Keychain** data.
     private let manager: Keychain.Manager
+
+    /// The setup option of the **Keychain**.
+    public let option: Keychain.SetupOption
 
     /// Creates a **Keychain** instance given the provided parameter(s).
     ///
     /// - Parameters:
-    ///   - access: The access type of the **Keychain**.
-    public init(access: Keychain.Access) {
-        self.access = access
-        self.manager = Manager(configuration: access.configuration)
+    ///   - option: The setup option of the **Keychain**.
+    public init(_ option: Keychain.SetupOption) {
+        self.manager = Manager(configuration: option.configuration)
+        self.option = option
     }
 }
 

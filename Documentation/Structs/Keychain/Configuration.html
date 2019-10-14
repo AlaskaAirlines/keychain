@@ -53,10 +53,13 @@
                 <a href="../../Structs/Keychain/Access.html">– Access</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Structs/Keychain/Storage.html">– Storage</a>
+                <a href="../../Structs/Keychain/Configuration.html">– Configuration</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Structs/Keychain/Configuration.html">– Configuration</a>
+                <a href="../../Structs/Keychain/SetupOption.html">– SetupOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Keychain/Storage.html">– Storage</a>
               </li>
             </ul>
           </li>
@@ -76,7 +79,7 @@
             <h1>Configuration</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">struct</span> <span class="kt">Configuration</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Configuration</span></code></pre>
 
                 </div>
               </div>
@@ -89,9 +92,36 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8KeychainAAV13ConfigurationV11accessGroupSSSgv"></a>
+                    <a name="/s:8KeychainAAV13ConfigurationV6accessAB6AccessOvp"></a>
+                    <a name="//apple_ref/swift/Property/access" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8KeychainAAV13ConfigurationV6accessAB6AccessOvp">access</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value indicates when a keychain item is accessible.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">let</span> <span class="nv">access</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Keychain/Access.html">Access</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8KeychainAAV13ConfigurationV11accessGroupSSSgvp"></a>
                     <a name="//apple_ref/swift/Property/accessGroup" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8KeychainAAV13ConfigurationV11accessGroupSSSgv">accessGroup</a>
+                    <a class="token" href="#/s:8KeychainAAV13ConfigurationV11accessGroupSSSgvp">accessGroup</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -127,9 +157,9 @@ Not specifying an access group will create items specific to each app.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8KeychainAAV13ConfigurationV11serviceNameSSv"></a>
+                    <a name="/s:8KeychainAAV13ConfigurationV11serviceNameSSvp"></a>
                     <a name="//apple_ref/swift/Property/serviceName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8KeychainAAV13ConfigurationV11serviceNameSSv">serviceName</a>
+                    <a class="token" href="#/s:8KeychainAAV13ConfigurationV11serviceNameSSvp">serviceName</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -159,9 +189,9 @@ Not specifying an access group will create items specific to each app.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8KeychainAAV13ConfigurationVADSSSg11accessGroup_SS11serviceNametcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(accessGroup:serviceName:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8KeychainAAV13ConfigurationVADSSSg11accessGroup_SS11serviceNametcfc">init(accessGroup:serviceName:)</a>
+                    <a name="/s:8KeychainAAV13ConfigurationV6access0C5Group11serviceNameAdB6AccessO_SSSgSStcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(access:accessGroup:serviceName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8KeychainAAV13ConfigurationV6access0C5Group11serviceNameAdB6AccessO_SSSgSStcfc">init(access:accessGroup:serviceName:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -176,7 +206,7 @@ Not specifying an access group will create items specific to each app.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="nf">init</span><span class="p">(</span><span class="nv">accessGroup</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">serviceName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="nf">init</span><span class="p">(</span><span class="nv">access</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Keychain.html">Keychain</a></span><span class="o">.</span><span class="kt"><a href="../../Structs/Keychain/Access.html">Access</a></span><span class="p">,</span> <span class="nv">accessGroup</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">serviceName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -184,6 +214,18 @@ Not specifying an access group will create items specific to each app.</p>
                         <h4>Parameters</h4>
                         <table class="graybox">
                           <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>access</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The value indicates when a keychain item is accessible.</p>
+                                </div>
+                              </td>
+                            </tr>
                             <tr>
                               <td>
                                 <code>
@@ -219,8 +261,8 @@ Not specifying an access group will create items specific to each app.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-03-08)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-10-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
