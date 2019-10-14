@@ -16,7 +16,7 @@ This approach leads to a much cleaner interaction with iOS Keychain that's enjoy
 - [x] Supports custom data types
 - [x] Supports storing multiple instances of the same type
 - [x] Supports app and group-specific keychain configurations
-- [x] Supports access option for keychain items.
+- [x] Supports access option for keychain items
 - [x] Supports selective Type synchronization through iCloud
 - [x] Handles object encoding and decoding from data returned by the iOS keychain
 - [x] Comprehensive Unit Test Coverage
