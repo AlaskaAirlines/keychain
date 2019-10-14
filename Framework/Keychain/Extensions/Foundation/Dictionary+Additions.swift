@@ -18,7 +18,5 @@ import Foundation
 
 extension Dictionary {
     /// Convenience variable for returning Swift Dictionary as CFDictionary.
-    var CFDictionary: CFDictionary {
-        return self as CFDictionary
-    }
+    var CFDictionary: CFDictionary { self as CFDictionary }
 }

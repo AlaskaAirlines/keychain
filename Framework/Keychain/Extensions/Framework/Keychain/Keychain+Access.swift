@@ -1,6 +1,6 @@
 // Keychain
 //
-// Copyright (c) 2018 Michael Babiy
+// Copyright (c) 2019 Michael Babiy
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,25 +19,56 @@ import Foundation
 public extension Keychain {
     /// List of supported access options for configuring **Keychain**.
     enum Access {
-        /// Will configure **Keychain** to be specific to each app.
-        case appSpecific(serviceName: String)
+        /// The data in the keychain item can always be accessed regardless of whether the device is locked.
+        case always
 
-        /// Will configure **Keychain** to be specific to a group of apps.
-        case groupSpecific(accessGroup: String, serviceName: String)
+        /// The data in the keychain item can always be accessed regardless of whether the device is locked.
+        case alwaysThisDeviceOnly
+
+        /// The data in the keychain item cannot be accessed after a restart until the device has been unlocked once by the user.
+        case afterFirstUnlock
+
+        /// The data in the keychain item cannot be accessed after a restart until the device has been unlocked once by the user.
+        case afterFirstUnlockThisDeviceOnly
+
+        /// The data in the keychain can only be accessed when the device is unlocked.
+        /// Only available if a passcode is set on the device.
+        case whenPasscodeSetThisDeviceOnly
+
+        /// The data in the keychain item can be accessed only while the device is unlocked by the user.
+        case whenUnlocked
+
+        /// The data in the keychain item can be accessed only while the device is unlocked by the user.
+        case whenUnlockedThisDeviceOnly
     }
 }
 
-// MARK: Access & Configuration
+// MARK: Security Attributes
 
 internal extension Keychain.Access {
-    /// Configuration data for the **Keychain** instance.
-    var configuration: Keychain.Configuration {
+    /// Returns `self` as the `kSec...` attribute.
+    var attribute: CFString {
         switch self {
-        case .appSpecific(let serviceName):
-            return Keychain.Configuration(serviceName: serviceName)
+        case .always:
+            return kSecAttrAccessibleAlways
 
-        case .groupSpecific(let accessGroup, let serviceName):
-            return Keychain.Configuration(accessGroup: accessGroup, serviceName: serviceName)
+        case .alwaysThisDeviceOnly:
+            return kSecAttrAccessibleAlwaysThisDeviceOnly
+
+        case .afterFirstUnlock:
+            return kSecAttrAccessibleAfterFirstUnlock
+
+        case .afterFirstUnlockThisDeviceOnly:
+            return kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
+
+        case .whenPasscodeSetThisDeviceOnly:
+            return kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly
+
+        case .whenUnlocked:
+            return kSecAttrAccessibleWhenUnlocked
+
+        case .whenUnlockedThisDeviceOnly:
+            return kSecAttrAccessibleWhenUnlockedThisDeviceOnly
         }
     }
 }

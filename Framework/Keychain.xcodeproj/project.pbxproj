@@ -10,7 +10,7 @@
 		1C0FF7602033583900682B8C /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FF75F2033583900682B8C /* KeychainItem.swift */; };
 		1C5795F8202BAF8E008F939A /* Keychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C5795F6202BAF8E008F939A /* Keychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C6B27C620336E87003D1AAE /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B27C520336E86003D1AAE /* Keychain.swift */; };
-		1C6B27C820337033003D1AAE /* Keychain+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B27C720337033003D1AAE /* Keychain+Access.swift */; };
+		1C6B27C820337033003D1AAE /* Keychain+SetupOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B27C720337033003D1AAE /* Keychain+SetupOption.swift */; };
 		1C6B27CA203383FD003D1AAE /* Keychain+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B27C9203383FD003D1AAE /* Keychain+Configuration.swift */; };
 		1C8ACB27203E5BEF00F0B8C9 /* KeychainItem+Implementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8ACB26203E5BEF00F0B8C9 /* KeychainItem+Implementation.swift */; };
 		1C979682203CD2B700A78F16 /* Dictionary+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C979681203CD2B700A78F16 /* Dictionary+Additions.swift */; };
@@ -24,6 +24,7 @@
 		1CFF46B02033A54B007BE585 /* Keychain+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFF46AF2033A54B007BE585 /* Keychain+Manager.swift */; };
 		4C7B7B42226407E8008EBB0B /* OSStatus+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B7B41226407E8008EBB0B /* OSStatus+Additions.swift */; };
 		4CDEF37C22063F9600D7DAD8 /* Bool+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF37B22063F9600D7DAD8 /* Bool+Additions.swift */; };
+		4CE95646235421AD000C936A /* Keychain+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE95645235421AD000C936A /* Keychain+Access.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +33,7 @@
 		1C5795F6202BAF8E008F939A /* Keychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keychain.h; sourceTree = "<group>"; };
 		1C5795F7202BAF8E008F939A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C6B27C520336E86003D1AAE /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		1C6B27C720337033003D1AAE /* Keychain+Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+Access.swift"; sourceTree = "<group>"; };
+		1C6B27C720337033003D1AAE /* Keychain+SetupOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+SetupOption.swift"; sourceTree = "<group>"; };
 		1C6B27C9203383FD003D1AAE /* Keychain+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+Configuration.swift"; sourceTree = "<group>"; };
 		1C8ACB26203E5BEF00F0B8C9 /* KeychainItem+Implementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeychainItem+Implementation.swift"; sourceTree = "<group>"; };
 		1C979681203CD2B700A78F16 /* Dictionary+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Additions.swift"; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		1CFF46AF2033A54B007BE585 /* Keychain+Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+Manager.swift"; sourceTree = "<group>"; };
 		4C7B7B41226407E8008EBB0B /* OSStatus+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSStatus+Additions.swift"; sourceTree = "<group>"; };
 		4CDEF37B22063F9600D7DAD8 /* Bool+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Additions.swift"; sourceTree = "<group>"; };
+		4CE95645235421AD000C936A /* Keychain+Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+Access.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,9 +134,10 @@
 		1C8ACB24203E5BB800F0B8C9 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
-				1C6B27C720337033003D1AAE /* Keychain+Access.swift */,
+				4CE95645235421AD000C936A /* Keychain+Access.swift */,
 				1C6B27C9203383FD003D1AAE /* Keychain+Configuration.swift */,
 				1CFF46AF2033A54B007BE585 /* Keychain+Manager.swift */,
+				1C6B27C720337033003D1AAE /* Keychain+SetupOption.swift */,
 				1CC6E4F42034B7D300F9A80F /* Keychain+Storage.swift */,
 			);
 			path = Keychain;
@@ -285,13 +288,14 @@
 				1CC6E5032034CEC900F9A80F /* Data+Additions.swift in Sources */,
 				1C8ACB27203E5BEF00F0B8C9 /* KeychainItem+Implementation.swift in Sources */,
 				1CC6E4EF2034B38D00F9A80F /* CFString+Additions.swift in Sources */,
-				1C6B27C820337033003D1AAE /* Keychain+Access.swift in Sources */,
+				1C6B27C820337033003D1AAE /* Keychain+SetupOption.swift in Sources */,
 				1C979682203CD2B700A78F16 /* Dictionary+Additions.swift in Sources */,
 				1C0FF7602033583900682B8C /* KeychainItem.swift in Sources */,
 				1CC6E4FD2034C77700F9A80F /* String+Additions.swift in Sources */,
 				4CDEF37C22063F9600D7DAD8 /* Bool+Additions.swift in Sources */,
 				1CC6E4F52034B7D300F9A80F /* Keychain+Storage.swift in Sources */,
 				1C6B27CA203383FD003D1AAE /* Keychain+Configuration.swift in Sources */,
+				4CE95646235421AD000C936A /* Keychain+Access.swift in Sources */,
 				1CC6E5012034CBB200F9A80F /* KeychainError.swift in Sources */,
 				1C6B27C620336E87003D1AAE /* Keychain.swift in Sources */,
 			);

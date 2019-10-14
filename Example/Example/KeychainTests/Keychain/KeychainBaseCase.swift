@@ -21,7 +21,7 @@ class KeychainBaseCase: XCTestCase {
 
     // MARK: Properties
 
-    let keychain = Keychain(access: .appSpecific(serviceName: "ExampleAppTests"))
+    let keychain = Keychain(.appSpecific(access: .always, serviceName: "ExampleAppTests"))
     let card = Card(name: "Steve", number: "1234 5678 9012 3456")
     let user = User(username: "username", password: "password")
 
