@@ -14,6 +14,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// NOTE: all data in this is dummy data used for testing only. 
+
 import XCTest
 @testable import Keychain
 
@@ -24,18 +26,18 @@ class KeychainBaseCase: XCTestCase {
     let keychain = Keychain(.appSpecific(access: .always, serviceName: "ExampleAppTests"))
     let card = Card(name: "Steve", number: "1234 5678 9012 3456")
     let user = User(username: "username", password: "password")
-
+// usernmaes and passwrods are dummy data please change to fit your env.
     var distinctUsers: [User] {
         return [
-            User(username: "emailOne@alaskaair.com", password: "password"),
-            User(username: "emailTwo@alaskaair.com", password: "password")
+            User(username: "email@test.com", password: "password"),
+            User(username: "email@test.com", password: "password")
         ]
     }
 
     var identicalUsers: [User] {
         return [
-            User(username: "emailOne@alaskaair.com", password: "p-one"),
-            User(username: "emailOne@alaskaair.com", password: "p-two")
+            User(username: "emailOne@test.com", password: "p-onedummypassword"),
+            User(username: "emailOne@test.com", password: "p-twodummypassword")
         ]
     }
 
