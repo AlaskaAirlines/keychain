@@ -20,8 +20,8 @@ import XCTest
 class KeychainSearchTests: KeychainBaseCase {
     func testKeychain_FindUsingIDKey_Success() {
         // Given
-        var keychainItem: User?
-        var keychainItems: [User]?
+        var keychainItem: TestUser?
+        var keychainItems: [TestUser]?
         var keychainError: Error?
 
         // When
@@ -29,8 +29,8 @@ class KeychainSearchTests: KeychainBaseCase {
             try distinctUsers.forEach { try keychain.save($0) }
 
             // Query keychain for all items of type User.
-            keychainItem = try keychain.item(ofType: User.self, idKey: "emailOne@alaskaair.com")
-            keychainItems = try keychain.items(ofType: User.self)
+            keychainItem = try keychain.item(ofType: TestUser.self, idKey: "one")
+            keychainItems = try keychain.items(ofType: TestUser.self)
         } catch { keychainError = error }
 
         // Then
@@ -38,13 +38,13 @@ class KeychainSearchTests: KeychainBaseCase {
         XCTAssertNotNil(keychainItem)
         XCTAssertEqual(keychainItems?.count, 2)
 
-        XCTAssertEqual(keychainItem?.username, "emailOne@alaskaair.com")
+        XCTAssertEqual(keychainItem?.name, "one")
     }
 
     func testKeychain_FindUsingIDKey_ReturnsNil_Success() {
         // Given
-        var keychainItem: User?
-        var keychainItems: [User]?
+        var keychainItem: TestUser?
+        var keychainItems: [TestUser]?
         var keychainError: Error?
 
         // When
@@ -52,8 +52,8 @@ class KeychainSearchTests: KeychainBaseCase {
             try distinctUsers.forEach { try keychain.save($0) }
 
             // Query keychain for all items of type User.
-            keychainItem = try keychain.item(ofType: User.self, idKey: "idKey")
-            keychainItems = try keychain.items(ofType: User.self)
+            keychainItem = try keychain.item(ofType: TestUser.self, idKey: "idKey")
+            keychainItems = try keychain.items(ofType: TestUser.self)
         } catch { keychainError = error }
 
         // Then
@@ -64,7 +64,7 @@ class KeychainSearchTests: KeychainBaseCase {
 
     func testKeychain_FindAll_Success() {
         // Given
-        var keychainItems: [User]?
+        var keychainItems: [TestUser]?
         var keychainError: Error?
 
         // When
@@ -72,7 +72,7 @@ class KeychainSearchTests: KeychainBaseCase {
             try distinctUsers.forEach { try keychain.save($0) }
 
             // Query keychain for all items of type User.
-            keychainItems = try keychain.items(ofType: User.self)
+            keychainItems = try keychain.items(ofType: TestUser.self)
         } catch { keychainError = error }
 
         // Then
@@ -80,10 +80,7 @@ class KeychainSearchTests: KeychainBaseCase {
         XCTAssertNotNil(keychainItems)
         XCTAssertEqual(keychainItems?.count, 2)
 
-        XCTAssertEqual(keychainItems?.first?.username, distinctUsers.first?.username)
-        XCTAssertEqual(keychainItems?.first?.password, distinctUsers.first?.password)
-
-        XCTAssertEqual(keychainItems?.last?.username, distinctUsers.last?.username)
-        XCTAssertEqual(keychainItems?.last?.password, distinctUsers.last?.password)
+        XCTAssertEqual(keychainItems?.first?.name, distinctUsers.first?.name)
+        XCTAssertEqual(keychainItems?.last?.name, distinctUsers.last?.name)
     }
 }

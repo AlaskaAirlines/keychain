@@ -22,20 +22,20 @@ class KeychainBaseCase: XCTestCase {
     // MARK: Properties
 
     let keychain = Keychain(.appSpecific(access: .always, serviceName: "ExampleAppTests"))
-    let card = Card(name: "Steve", number: "1234 5678 9012 3456")
-    let user = User(username: "username", password: "password")
+    let card = TestCard(name: "Steve", number: "1234 5678 9012 3456")
+    let user = TestUser(name: "username")
 
-    var distinctUsers: [User] {
+    var distinctUsers: [TestUser] {
         return [
-            User(username: "emailOne@alaskaair.com", password: "password"),
-            User(username: "emailTwo@alaskaair.com", password: "password")
+            TestUser(name: "one"),
+            TestUser(name: "two")
         ]
     }
 
-    var identicalUsers: [User] {
+    var identicalUsers: [TestUser] {
         return [
-            User(username: "emailOne@alaskaair.com", password: "p-one"),
-            User(username: "emailOne@alaskaair.com", password: "p-two")
+            TestUser(name: "one"),
+            TestUser(name: "one")
         ]
     }
 
@@ -45,15 +45,15 @@ class KeychainBaseCase: XCTestCase {
         super.setUp()
 
         // Before running each test, check for an empty keychain.
-        XCTAssertNil(try keychain.items(ofType: Card.self))
-        XCTAssertNil(try keychain.items(ofType: User.self))
+        XCTAssertNil(try keychain.items(ofType: TestCard.self))
+        XCTAssertNil(try keychain.items(ofType: TestUser.self))
     }
 
     override func tearDown() {
         // Before running each test, clear the keychain.
         do {
-            try keychain.deleteAll(ofType: Card.self)
-            try keychain.deleteAll(ofType: User.self)
+            try keychain.deleteAll(ofType: TestCard.self)
+            try keychain.deleteAll(ofType: TestUser.self)
         } catch { fatalError("Error deleting all items.") }
 
         super.tearDown()

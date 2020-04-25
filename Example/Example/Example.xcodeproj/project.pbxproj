@@ -13,7 +13,7 @@
 		1C2B51242045CF9700F4FF33 /* ItemsViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B51232045CF9700F4FF33 /* ItemsViewController+UITableViewDataSource.swift */; };
 		1C3B034E204486C5007190F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3B034D204486C5007190F6 /* Main.storyboard */; };
 		1C3B035020448C35007190F6 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B034F20448C35007190F6 /* NewItemViewController.swift */; };
-		1C3F1398203D3AB5008072DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F1397203D3AB5008072DF /* User.swift */; };
+		1C3F1398203D3AB5008072DF /* TestUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F1397203D3AB5008072DF /* TestUser.swift */; };
 		1C3F139C203D3ABD008072DF /* KeychainSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F1399203D3ABD008072DF /* KeychainSearchTests.swift */; };
 		1C3F139D203D3ABD008072DF /* KeychainConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F139A203D3ABD008072DF /* KeychainConfigurationTests.swift */; };
 		1C3F139E203D3ABD008072DF /* KeychainItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F139B203D3ABD008072DF /* KeychainItemTests.swift */; };
@@ -24,7 +24,7 @@
 		1CC6195D2033ACBB00996EC6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6195C2033ACBB00996EC6 /* Constants.swift */; };
 		1CC619602033AD5A00996EC6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6195F2033AD5A00996EC6 /* Item.swift */; };
 		1CDD5191203E1D030050E179 /* KeychainDeleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDD5190203E1D030050E179 /* KeychainDeleteTests.swift */; };
-		1CEB5689203E0058008B740E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEB5688203E0058008B740E /* Card.swift */; };
+		1CEB5689203E0058008B740E /* TestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEB5688203E0058008B740E /* TestCard.swift */; };
 		4CDEF37D220640DD00D7DAD8 /* Keychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD1635D21ED8FDE00B44EBB /* Keychain.framework */; };
 		4CDEF37E220640DD00D7DAD8 /* Keychain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD1635D21ED8FDE00B44EBB /* Keychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4CE9564823542F55000C936A /* KeychainAccessAttributesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE9564723542F55000C936A /* KeychainAccessAttributesTests.swift */; };
@@ -61,7 +61,7 @@
 		1C2B51232045CF9700F4FF33 /* ItemsViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemsViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		1C3B034D204486C5007190F6 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1C3B034F20448C35007190F6 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
-		1C3F1397203D3AB5008072DF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1C3F1397203D3AB5008072DF /* TestUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUser.swift; sourceTree = "<group>"; };
 		1C3F1399203D3ABD008072DF /* KeychainSearchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSearchTests.swift; sourceTree = "<group>"; };
 		1C3F139A203D3ABD008072DF /* KeychainConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfigurationTests.swift; sourceTree = "<group>"; };
 		1C3F139B203D3ABD008072DF /* KeychainItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemTests.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		1CC6195C2033ACBB00996EC6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1CC6195F2033AD5A00996EC6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1CDD5190203E1D030050E179 /* KeychainDeleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainDeleteTests.swift; sourceTree = "<group>"; };
-		1CEB5688203E0058008B740E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		1CEB5688203E0058008B740E /* TestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCard.swift; sourceTree = "<group>"; };
 		4CD1635D21ED8FDE00B44EBB /* Keychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Keychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE9564723542F55000C936A /* KeychainAccessAttributesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccessAttributesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,8 +150,8 @@
 		1C3F1396203D3A9B008072DF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1CEB5688203E0058008B740E /* Card.swift */,
-				1C3F1397203D3AB5008072DF /* User.swift */,
+				1CEB5688203E0058008B740E /* TestCard.swift */,
+				1C3F1397203D3AB5008072DF /* TestUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,9 +361,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C3F1398203D3AB5008072DF /* User.swift in Sources */,
+				1C3F1398203D3AB5008072DF /* TestUser.swift in Sources */,
 				1C3F139D203D3ABD008072DF /* KeychainConfigurationTests.swift in Sources */,
-				1CEB5689203E0058008B740E /* Card.swift in Sources */,
+				1CEB5689203E0058008B740E /* TestCard.swift in Sources */,
 				4CE9564823542F55000C936A /* KeychainAccessAttributesTests.swift in Sources */,
 				1C132CEB203DEB12001C4D38 /* KeychainBaseCase.swift in Sources */,
 				1C132CE9203DEAEC001C4D38 /* KeychainSaveTests.swift in Sources */,

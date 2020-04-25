@@ -17,16 +17,14 @@
 import Foundation
 @testable import Keychain
 
-struct Card: KeychainItem {
+/// Arbitrary model object conforming to **KeychainItem** protocol.
+struct TestUser: KeychainItem {
 
     // MARK: Properties
 
     let name: String
-    let number: String
 
     // MARK: KeychainItem
 
-    internal var idKey: String {
-        return number
-    }
+    var idKey: String { name }
 }
