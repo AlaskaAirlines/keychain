@@ -19,8 +19,8 @@ import XCTest
 
 class KeychainItemTests: KeychainBaseCase {
     func testKeychainItem_TypeKeyReturnsExpectedDescription() {
-        XCTAssertEqual(Card.typeKey, "Card")
-        XCTAssertEqual(User.typeKey, "User")
+        XCTAssertEqual(TestCard.typeKey, "TestCard")
+        XCTAssertEqual(TestUser.typeKey, "TestUser")
     }
 
     func testKeychainItem_DataEncodingDecodingReturnsExpectedResult() {
@@ -29,12 +29,12 @@ class KeychainItemTests: KeychainBaseCase {
             let cardData = try card.data()
             let userData = try user.data()
 
-            let decodedCard = try PropertyListDecoder().decode(Card.self, from: cardData)
-            let decodedUser = try PropertyListDecoder().decode(User.self, from: userData)
+            let decodedCard = try PropertyListDecoder().decode(TestCard.self, from: cardData)
+            let decodedUser = try PropertyListDecoder().decode(TestUser.self, from: userData)
 
             // Then
             XCTAssertEqual(decodedCard.number, card.number)
-            XCTAssertEqual(decodedUser.username, user.username)
+            XCTAssertEqual(decodedUser.name, user.name)
 
         } catch { XCTFail("Failed to encode / decode item data.") }
     }

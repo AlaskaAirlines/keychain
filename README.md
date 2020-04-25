@@ -52,13 +52,13 @@ Keychain framework currently supports two access types - App Specific and Group 
 
 Getting started is easy. First, create the keychain instance using one of the supported access types.
 
-```
+```swift
 let keychain = Keychain(.appSpecific(access: .always, serviceName: "App"))
 ```
 
 Any custom type you want to encrypt and store in iOS Keychain needs to conform and implement the `KeychainItem` protocol. The `KeychainItem` protocol provides default implementation for all of its properties - except the `idKey`. See documentation for more information.
 
-```
+```swift
 struct Credential: KeychainItem {
     let username: String
     let password: String
@@ -73,7 +73,7 @@ struct Credential: KeychainItem {
 
 Keychain offers a handful of methods that will allow you to save, delete, or retrieve items.
 
-```
+```swift
 let user = User(username: "username", password: "password")
 
 // save

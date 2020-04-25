@@ -15,19 +15,17 @@
 // limitations under the License.
 
 import Foundation
-import Keychain
+@testable import Keychain
 
 /// Arbitrary model object conforming to **KeychainItem** protocol.
-internal struct User: KeychainItem {
+struct TestCard: KeychainItem {
 
     // MARK: Properties
 
-    internal let username: String
-    internal let password: String
+    let name: String
+    let number: String
 
     // MARK: KeychainItem
 
-    internal var idKey: String {
-        return username
-    }
+    var idKey: String { number }
 }

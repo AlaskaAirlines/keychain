@@ -20,7 +20,7 @@ import XCTest
 class KeychainSaveTests: KeychainBaseCase {
     func testKeychain_SaveItem_Success() {
         // Given
-        var keychainItems: [User]?
+        var keychainItems: [TestUser]?
         var keychainError: Error?
 
         // When
@@ -28,7 +28,7 @@ class KeychainSaveTests: KeychainBaseCase {
             try keychain.save(user)
 
             // Query keychain for all items of type User.
-            keychainItems = try keychain.items(ofType: User.self)
+            keychainItems = try keychain.items(ofType: TestUser.self)
         } catch { keychainError = error }
 
         // Then
@@ -39,7 +39,7 @@ class KeychainSaveTests: KeychainBaseCase {
 
     func testKeychain_SaveIdenticalItem_SavesOnce_Success() {
         // Given
-        var keychainItems: [User]?
+        var keychainItems: [TestUser]?
         var keychainError: Error?
 
         // When
@@ -47,7 +47,7 @@ class KeychainSaveTests: KeychainBaseCase {
             try identicalUsers.forEach { try keychain.save($0) }
 
             // Query keychain for all items of type User.
-            keychainItems = try keychain.items(ofType: User.self)
+            keychainItems = try keychain.items(ofType: TestUser.self)
         } catch { keychainError = error }
 
         // Then
@@ -58,7 +58,7 @@ class KeychainSaveTests: KeychainBaseCase {
 
     func testKeychain_SaveSameItemRepeatedly_SavesOnce_Success() {
         // Given
-        var keychainItems: [User]?
+        var keychainItems: [TestUser]?
         var keychainError: Error?
 
         // When
@@ -67,7 +67,7 @@ class KeychainSaveTests: KeychainBaseCase {
             try keychain.save(user)
 
             // Query keychain for all items of type User.
-            keychainItems = try keychain.items(ofType: User.self)
+            keychainItems = try keychain.items(ofType: TestUser.self)
         } catch { keychainError = error }
 
         // Then
@@ -78,8 +78,8 @@ class KeychainSaveTests: KeychainBaseCase {
 
     func testKeychain_SaveDistinctItemTypes_Success() {
         // Given
-        var keychainCards: [Card]?
-        var keychainUsers: [User]?
+        var keychainCards: [TestCard]?
+        var keychainUsers: [TestUser]?
         var keychainError: Error?
 
         // When
@@ -88,8 +88,8 @@ class KeychainSaveTests: KeychainBaseCase {
             try keychain.save(user)
 
             // Query keychain for all items of type User & Card.
-            keychainCards = try keychain.items(ofType: Card.self)
-            keychainUsers = try keychain.items(ofType: User.self)
+            keychainCards = try keychain.items(ofType: TestCard.self)
+            keychainUsers = try keychain.items(ofType: TestUser.self)
         } catch { keychainError = error }
 
         // Then
