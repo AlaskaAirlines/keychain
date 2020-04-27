@@ -19,7 +19,7 @@ import XCTest
 class KeychainDeleteTests: KeychainBaseCase {
     func testKeychain_DeleteOneItem_Success() {
         // Given
-        var keychainItems: [User]?
+        var keychainItems: [TestUser]?
         var keychainError: Error?
 
         // When
@@ -27,17 +27,17 @@ class KeychainDeleteTests: KeychainBaseCase {
             try distinctUsers.forEach { try keychain.save($0) }
 
             // Ensure all items are successfully saved.
-            XCTAssertEqual(try keychain.items(ofType: User.self)?.count, 2)
+            XCTAssertEqual(try keychain.items(ofType: TestUser.self)?.count, 2)
 
             // Query all items, get the first one and delete it.
             if
-                let items = try keychain.items(ofType: User.self),
+                let items = try keychain.items(ofType: TestUser.self),
                 let item = items.first {
                 try keychain.delete(item)
             }
 
             // Query keychain for all items.
-            keychainItems = try keychain.items(ofType: User.self)
+            keychainItems = try keychain.items(ofType: TestUser.self)
         } catch { keychainError = error }
 
         // Then
@@ -48,8 +48,8 @@ class KeychainDeleteTests: KeychainBaseCase {
 
     func testKeychain_DeleteAll_SpecificType_Success() {
         // Given
-        var keychainCards: [Card]?
-        var keychainUsers: [User]?
+        var keychainCards: [TestCard]?
+        var keychainUsers: [TestUser]?
         var keychainError: Error?
 
         // When
@@ -58,15 +58,15 @@ class KeychainDeleteTests: KeychainBaseCase {
             try keychain.save(card)
 
             // Ensure items are saved to the Keychain.
-            XCTAssertNotNil(try keychain.items(ofType: Card.self))
-            XCTAssertNotNil(try keychain.items(ofType: User.self))
+            XCTAssertNotNil(try keychain.items(ofType: TestCard.self))
+            XCTAssertNotNil(try keychain.items(ofType: TestUser.self))
 
             // Delete all users. Keep Card types.
-            try keychain.deleteAll(ofType: User.self)
+            try keychain.deleteAll(ofType: TestUser.self)
 
             // Query keychain for all items.
-            keychainCards = try keychain.items(ofType: Card.self)
-            keychainUsers = try keychain.items(ofType: User.self)
+            keychainCards = try keychain.items(ofType: TestCard.self)
+            keychainUsers = try keychain.items(ofType: TestUser.self)
         } catch { keychainError = error }
 
         // Then
