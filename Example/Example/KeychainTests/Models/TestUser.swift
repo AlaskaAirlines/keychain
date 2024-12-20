@@ -1,6 +1,6 @@
-// Keychain
+// KeychainAccess
 //
-// Copyright (c) 2019 Alaska Airlines
+// Copyright (c) 2025 Alaska Airlines
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,16 +15,16 @@
 // limitations under the License.
 
 import Foundation
-@testable import Keychain
+@testable import KeychainAccess
 
 /// Arbitrary model object conforming to **KeychainItem** protocol.
 struct TestUser: KeychainItem {
 
-    // MARK: Properties
+    // MARK: - Properties
 
     let name: String
 
-    // MARK: KeychainItem
+    // MARK: - KeychainItem
 
     var idKey: String { name }
 }

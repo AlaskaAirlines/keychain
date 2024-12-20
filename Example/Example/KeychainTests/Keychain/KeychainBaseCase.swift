@@ -1,6 +1,6 @@
-// Keychain
+// KeychainAccess
 //
-// Copyright (c) 2019 Alaska Airlines
+// Copyright (c) 2025 Alaska Airlines
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,13 +15,13 @@
 // limitations under the License.
 
 import XCTest
-@testable import Keychain
+@testable import KeychainAccess
 
 class KeychainBaseCase: XCTestCase {
 
-    // MARK: Properties
+    // MARK: - Properties
 
-    let keychain = Keychain(.appSpecific(access: .always, serviceName: "ExampleAppTests"))
+    let keychain = Keychain(.appSpecific(access: .afterFirstUnlock, serviceName: "ExampleAppTests"))
     let card = TestCard(name: "Steve", number: "1234 5678 9012 3456")
     let user = TestUser(name: "username")
 
@@ -39,7 +39,7 @@ class KeychainBaseCase: XCTestCase {
         ]
     }
 
-    // MARK: Override
+    // MARK: - Override
 
     override func setUp() {
         super.setUp()
