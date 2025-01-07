@@ -1,8 +1,8 @@
-// swift-tools-version:5.0
+// swift-tools-version:6.0
 //
-// Keychain
+// KeychainAccess
 //
-// Copyright (c) 2019 Alaska Airlines
+// Copyright (c) 2025 Alaska Airlines
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,22 +15,27 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 import PackageDescription
 
 let package = Package(
-    name: "Keychain",
+    name: "KeychainAccess",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v15)
     ],
     products: [
         .library(
-            name: "Keychain",
-            targets: ["Keychain"])
+            name: "KeychainAccess",
+            targets: ["KeychainAccess"])
     ],
     targets: [
         .target(
-            name: "Keychain",
-            path: "Framework/Keychain")
-    ],
-    swiftLanguageVersions: [.v5]
+            name: "KeychainAccess",
+            path: "Framework/KeychainAccess",
+            swiftSettings: [
+                .unsafeFlags(["-enable-library-evolution", "-O"]),
+                .swiftLanguageMode(.v6)
+            ]
+        )
+    ]
 )

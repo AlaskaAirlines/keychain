@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AccessLevel Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+    <script src="../../js/lunr.min.js" defer></script>
+    <script src="../../js/typeahead.jquery.js" defer></script>
+    <script src="../../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/AccessLevel" class="dashAnchor"></a>
+    <a title="AccessLevel Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html">KeychainAccess Docs</a> (100% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html">KeychainAccess</a>
+        <img id="carat" src="../../img/carat.png" alt=""/>
+        <a href="../../Structs.html">Structures</a>
+        <img id="carat" src="../../img/carat.png" alt=""/>
+        <a href="../../Structs/Keychain.html">Keychain</a>
+        <img id="carat" src="../../img/carat.png" alt=""/>
+        AccessLevel Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums/KeychainError.html">KeychainError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Protocols/KeychainItem.html">KeychainItem</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/Keychain.html">Keychain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Keychain/AccessLevel.html">– AccessLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Keychain/Configuration.html">– Configuration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Keychain/SetupOption.html">– SetupOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Keychain/Storage.html">– Storage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Typealiases.html#/s:14KeychainAccess0A5Querya">KeychainQuery</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AccessLevel</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">AccessLevel</span> <span class="p">:</span> <span class="kt">Sendable</span></code></pre>
+
+                </div>
+              </div>
+            <p>List of supported access options for configuring <strong>Keychain</strong>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14KeychainAccess0A0V0B5LevelO16afterFirstUnlockyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/afterFirstUnlock" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14KeychainAccess0A0V0B5LevelO16afterFirstUnlockyA2EmF">afterFirstUnlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The data in the keychain item cannot be accessed after a restart until the device has been unlocked once by the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">afterFirstUnlock</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14KeychainAccess0A0V0B5LevelO30afterFirstUnlockThisDeviceOnlyyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/afterFirstUnlockThisDeviceOnly" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14KeychainAccess0A0V0B5LevelO30afterFirstUnlockThisDeviceOnlyyA2EmF">afterFirstUnlockThisDeviceOnly</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The data in the keychain item cannot be accessed after a restart until the device has been unlocked once by the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">afterFirstUnlockThisDeviceOnly</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14KeychainAccess0A0V0B5LevelO29whenPasscodeSetThisDeviceOnlyyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/whenPasscodeSetThisDeviceOnly" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14KeychainAccess0A0V0B5LevelO29whenPasscodeSetThisDeviceOnlyyA2EmF">whenPasscodeSetThisDeviceOnly</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The data in the keychain can only be accessed when the device is unlocked.
+Only available if a passcode is set on the device.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">whenPasscodeSetThisDeviceOnly</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14KeychainAccess0A0V0B5LevelO12whenUnlockedyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/whenUnlocked" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14KeychainAccess0A0V0B5LevelO12whenUnlockedyA2EmF">whenUnlocked</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The data in the keychain item can be accessed only while the device is unlocked by the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">whenUnlocked</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14KeychainAccess0A0V0B5LevelO26whenUnlockedThisDeviceOnlyyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/whenUnlockedThisDeviceOnly" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14KeychainAccess0A0V0B5LevelO26whenUnlockedThisDeviceOnlyyA2EmF">whenUnlockedThisDeviceOnly</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The data in the keychain item can be accessed only while the device is unlocked by the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">whenUnlockedThisDeviceOnly</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Security%20Attributes"></a>
+                <a name="//apple_ref/swift/Section/Security Attributes" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Security%20Attributes"></a>
+                  <h3 class="section-name"><span>Security Attributes</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14KeychainAccess0A0V0B5LevelO9attributeSo11CFStringRefavp"></a>
+                    <a name="//apple_ref/swift/Property/attribute" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14KeychainAccess0A0V0B5LevelO9attributeSo11CFStringRefavp">attribute</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>self</code> as the <code>kSec...</code> attribute.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">attribute</span><span class="p">:</span> <span class="kt">CFString</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2024 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2024-12-24)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

@@ -1,6 +1,6 @@
-// Keychain
+// KeychainAccess
 //
-// Copyright (c) 2019 Alaska Airlines
+// Copyright (c) 2025 Alaska Airlines
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,29 +18,29 @@ import UIKit
 
 class ItemsViewController: UIViewController {
 
-    // MARK: Outlets
+    // MARK: - Outlets
 
     @IBOutlet weak var tableView: UITableView!
 
-    // MARK: Properties
+    // MARK: - Properties
 
     private(set) var items: [Item]?
 
-    // MARK: Override
+    // MARK: - Override
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         queryKeychain()
     }
 
-    // MARK: IBActions
+    // MARK: - IBActions
 
     @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
         queryKeychain()
     }
 }
 
-// MARK: Keychain
+// MARK: - Keychain
 
 extension ItemsViewController {
     /// Will query keychain for items of type `Item` and reload table view.

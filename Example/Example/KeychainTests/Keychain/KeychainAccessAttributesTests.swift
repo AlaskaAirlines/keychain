@@ -7,22 +7,18 @@
 //
 
 import XCTest
-@testable import Keychain
+@testable import KeychainAccess
 
 class KeychainAccessAttributesTests: KeychainBaseCase {
     func testKeychain_AccessTypeReturnsCorrectkSecAttribute() {
         // Given, When
-        let always = Keychain.Access.always
-        let alwaysThisDeviceOnly = Keychain.Access.alwaysThisDeviceOnly
-        let afterFirstUnlock = Keychain.Access.afterFirstUnlock
-        let afterFirstUnlockThisDeviceOnly = Keychain.Access.afterFirstUnlockThisDeviceOnly
-        let whenPasscodeSetThisDeviceOnly = Keychain.Access.whenPasscodeSetThisDeviceOnly
-        let whenUnlocked = Keychain.Access.whenUnlocked
-        let whenUnlockedThisDeviceOnly = Keychain.Access.whenUnlockedThisDeviceOnly
+        let afterFirstUnlock = Keychain.AccessLevel.afterFirstUnlock
+        let afterFirstUnlockThisDeviceOnly = Keychain.AccessLevel.afterFirstUnlockThisDeviceOnly
+        let whenPasscodeSetThisDeviceOnly = Keychain.AccessLevel.whenPasscodeSetThisDeviceOnly
+        let whenUnlocked = Keychain.AccessLevel.whenUnlocked
+        let whenUnlockedThisDeviceOnly = Keychain.AccessLevel.whenUnlockedThisDeviceOnly
 
         // Then
-        XCTAssertEqual(always.attribute, kSecAttrAccessibleAlways)
-        XCTAssertEqual(alwaysThisDeviceOnly.attribute, kSecAttrAccessibleAlwaysThisDeviceOnly)
         XCTAssertEqual(afterFirstUnlock.attribute, kSecAttrAccessibleAfterFirstUnlock)
         XCTAssertEqual(afterFirstUnlockThisDeviceOnly.attribute, kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly)
         XCTAssertEqual(whenPasscodeSetThisDeviceOnly.attribute, kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly)

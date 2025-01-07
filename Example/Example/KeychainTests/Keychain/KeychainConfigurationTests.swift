@@ -1,6 +1,6 @@
-// Keychain
+// KeychainAccess
 //
-// Copyright (c) 2019 Alaska Airlines
+// Copyright (c) 2025 Alaska Airlines
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,13 +15,13 @@
 // limitations under the License.
 
 import XCTest
-@testable import Keychain
+@testable import KeychainAccess
 
 class KeychainConfigurationTests: KeychainBaseCase {
     func testKeychain_SetupOptionReturnsCorrectConfiguration() {
         // Given, When
-        let appSpecific: Keychain.SetupOption = .appSpecific(access: .always, serviceName: "AppName")
-        let groupSpecific: Keychain.SetupOption = .groupSpecific(access: .always, accessGroup: "ABC.com.app.example", serviceName: "AppName")
+        let appSpecific: Keychain.SetupOption = .appSpecific(access: .afterFirstUnlock, serviceName: "AppName")
+        let groupSpecific: Keychain.SetupOption = .groupSpecific(access: .afterFirstUnlock, accessGroup: "ABC.com.app.example", serviceName: "AppName")
 
         // Then
         XCTAssertNil(appSpecific.configuration.accessGroup)

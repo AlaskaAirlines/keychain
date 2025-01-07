@@ -5,6 +5,6 @@
       location = "group:Example/Example/Example.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Framework/Keychain.xcodeproj">
+      location = "group:Framework/KeychainAccess.xcodeproj">
    </FileRef>
 </Workspace>

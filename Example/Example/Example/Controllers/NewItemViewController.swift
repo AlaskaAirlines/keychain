@@ -1,6 +1,6 @@
-// Keychain
+// KeychainAccess
 //
-// Copyright (c) 2019 Alaska Airlines
+// Copyright (c) 2025 Alaska Airlines
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@ import UIKit
 
 class NewItemViewController: UIViewController {
 
-    // MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var websiteTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
-    // MARK: Override
+    // MARK: - Override
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -33,7 +33,7 @@ class NewItemViewController: UIViewController {
         websiteTextField.becomeFirstResponder()
     }
 
-    // MARK: Actions
+    // MARK: - Actions
 
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         guard
