@@ -16,7 +16,7 @@
 
 import Foundation
 
-internal extension String {
+extension String {
     /// Convenience variable for returning Swift string as AnyObject.
     var object: AnyObject { self as AnyObject }
 }

@@ -16,7 +16,7 @@
 
 import Foundation
 
-internal extension KeychainItem {
+extension KeychainItem {
     /// Creates and returns **KeychainQuery** instance object composed from configuration and item data.
     ///
     /// - Parameters:
@@ -24,7 +24,7 @@ internal extension KeychainItem {
     ///
     /// - Returns: The **KeychainQuery** object.
     func query(using configuration: Keychain.Configuration) throws -> KeychainQuery {
-        var query = KeychainQuery()
+        var query: KeychainQuery = .init()
         query[kSecClass.string] = Self.storage.kSecClass
         query[kSecAttrAccessible.string] = configuration.access.attribute
         query[kSecAttrSynchronizable.string] = Self.isSynchronizable.object
@@ -49,7 +49,7 @@ internal extension KeychainItem {
     ///
     /// - Returns: The **KeychainQuery** object.
     static func query(using configuration: Keychain.Configuration) throws -> KeychainQuery {
-        var query = KeychainQuery()
+        var query: KeychainQuery = .init()
         query[kSecClass.string] = Self.storage.kSecClass
         query[kSecAttrAccessible.string] = configuration.access.attribute
         query[kSecAttrSynchronizable.string] = Self.isSynchronizable.object

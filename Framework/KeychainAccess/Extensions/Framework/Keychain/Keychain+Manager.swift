@@ -16,17 +16,23 @@
 
 import Foundation
 
-internal extension Keychain {
+// MARK: - Keychain.Manager
+
+extension Keychain {
     /// Responsible for saving, deleting, and searching the **Keychain**.
     struct Manager: Sendable {
+        // MARK: - Properties
+
         /// The **Keychain** configuration data derived from **Keychain.Access** type.
         private let configuration: Keychain.Configuration
+
+        // MARK: - Lifecycle
 
         /// Creates a configuration instance given the provided parameter(s).
         ///
         /// - Parameters:
         ///   - configuration: The **Keychain** configuration data.
-        internal init(configuration: Keychain.Configuration) {
+        init(configuration: Keychain.Configuration) {
             self.configuration = configuration
         }
     }
@@ -34,18 +40,23 @@ internal extension Keychain {
 
 // MARK: - Manager Interaction
 
-internal extension Keychain.Manager {
+extension Keychain.Manager {
     /// Deletes item from the **Keychain**.
     ///
     /// For documentation see: Keychain.delete()
+    // swiftformat:disable propertytypes
     func delete(_ item: KeychainItem) throws {
         let query = try item.query(using: configuration).CFDictionary
         let status = SecItemDelete(query)
 
         // Throw an error if an unexpected status was returned.
-        guard status == noErr || status == errSecItemNotFound else { throw KeychainError.unhandled(status) }
+        guard status == noErr || status == errSecItemNotFound else {
+            throw KeychainError.unhandled(status)
+        }
     }
-    
+
+    // swiftformat:enable propertytypes
+
     /// Deletes all items of specified type.
     ///
     /// For documentation see: Keychain.deleteAll()
@@ -56,6 +67,7 @@ internal extension Keychain.Manager {
     /// Saves item to the **Keychain**.
     ///
     /// For documentation see: Keychain.save()
+    // swiftformat:disable propertytypes
     func save(_ item: KeychainItem) throws {
         // Try deleting previously saved item object matching this item query.
         try delete(item)
@@ -65,14 +77,18 @@ internal extension Keychain.Manager {
         let status = SecItemAdd(query, nil)
 
         // Throw an error if an unexpected status was returned.
-        guard status == noErr else { throw KeychainError.unhandled(status) }
+        guard status == noErr else {
+            throw KeychainError.unhandled(status)
+        }
     }
+
+    // swiftformat:enable propertytypes
 
     /// Returns an item for specified account and service group using **idKey**.
     ///
     /// For documentation see: Keychain.item()
     func item<T: KeychainItem>(ofType type: T.Type, idKey: String) throws -> T? {
-        return try items(ofType: type)?.filter { $0.idKey == idKey }.first
+        try items(ofType: type)?.filter { $0.idKey == idKey }.first
     }
 
     /// Returns an array of items for specified account and service group.
@@ -87,17 +103,25 @@ internal extension Keychain.Manager {
         }
 
         // If no items were found, return an empty array.
-        guard status != errSecItemNotFound else { return nil }
+        guard status != errSecItemNotFound else {
+            return nil
+        }
 
         // Throw an error if an unexpected status was returned.
-        guard status == noErr else { throw KeychainError.unhandled(status) }
+        guard status == noErr else {
+            throw KeychainError.unhandled(status)
+        }
 
         // Cast the query result to an array of dictionaries.
-        guard let results = result as? [[String: AnyObject]] else { throw KeychainError.unexpectedItemData }
+        guard let results = result as? [[String: AnyObject]] else {
+            throw KeychainError.unexpectedItemData
+        }
 
         // Convert an array of dictionaries into an array of T.
         return try results.compactMap {
-            guard let data = $0[kSecValueData.string] as? Data else { return nil }
+            guard let data = $0[kSecValueData.string] as? Data else {
+                return nil
+            }
 
             return try PropertyListDecoder().decode(type, from: data)
         }

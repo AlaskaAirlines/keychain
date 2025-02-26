@@ -16,11 +16,11 @@
 
 import Foundation
 
-public extension OSStatus {
+extension OSStatus {
     /// Returns error message for current OSStatus code, if any.
     ///
     /// Uses the `SecCopyErrorMessageString(_:_:)` function to obtain a human readable string.
-    var errorMessage: String {
+    public var errorMessage: String {
         SecCopyErrorMessageString(self, nil)?.string ?? "Unknown OSStatus: \(self)."
     }
 }

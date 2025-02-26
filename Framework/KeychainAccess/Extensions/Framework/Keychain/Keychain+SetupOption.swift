@@ -16,9 +16,11 @@
 
 import Foundation
 
-public extension Keychain {
+// MARK: - Keychain.SetupOption
+
+extension Keychain {
     /// List of supported setup options for configuring **Keychain**.
-    enum SetupOption: Sendable {
+    public enum SetupOption: Sendable {
         /// Will configure **Keychain** to be specific to each app.
         case appSpecific(access: AccessLevel, serviceName: String)
 
@@ -29,14 +31,14 @@ public extension Keychain {
 
 // MARK: - Setup & Configuration
 
-internal extension Keychain.SetupOption {
+extension Keychain.SetupOption {
     /// Configuration data for the **Keychain** instance.
     var configuration: Keychain.Configuration {
         switch self {
-        case .appSpecific(let access, let serviceName):
+        case let .appSpecific(access, serviceName):
             return Keychain.Configuration(access: access, serviceName: serviceName)
 
-        case .groupSpecific(let access, let accessGroup, let serviceName):
+        case let .groupSpecific(access, accessGroup, serviceName):
             return Keychain.Configuration(access: access, accessGroup: accessGroup, serviceName: serviceName)
         }
     }
