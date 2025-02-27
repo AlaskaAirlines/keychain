@@ -17,4 +17,4 @@
 import Foundation
 
 /// Represents **Keychain** query object - dictionary.
-internal typealias KeychainQuery = [String: AnyObject]
+typealias KeychainQuery = [String: AnyObject]

@@ -18,15 +18,17 @@
 
 import Foundation
 
-public extension Keychain {
+// MARK: - Keychain.Storage
+
+extension Keychain {
     /// List of supported storage options for **Keychain**.
-    enum Storage: Sendable {
+    public enum Storage: Sendable {
         /// Item will be stored as encrypted, generic passwords.
         case genericPassword
     }
 }
 
-internal extension Keychain.Storage {
+extension Keychain.Storage {
     /// C string value for a given Storage case.
     var kSecClass: CFString {
         switch self {

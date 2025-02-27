@@ -16,9 +16,11 @@
 
 import Foundation
 
-public extension Keychain {
+// MARK: - Keychain.AccessLevel
+
+extension Keychain {
     /// List of supported access options for configuring **Keychain**.
-    enum AccessLevel: Sendable {
+    public enum AccessLevel: Sendable {
         /// The data in the keychain item cannot be accessed after a restart until the device has been unlocked once by the user.
         case afterFirstUnlock
 
@@ -39,7 +41,7 @@ public extension Keychain {
 
 // MARK: - Security Attributes
 
-internal extension Keychain.AccessLevel {
+extension Keychain.AccessLevel {
     /// Returns `self` as the `kSec...` attribute.
     var attribute: CFString {
         switch self {

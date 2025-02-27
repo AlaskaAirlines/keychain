@@ -16,11 +16,13 @@
 
 import Foundation
 
-internal extension Keychain {
+extension Keychain {
     /// A type that represents configuration object for the **Keychain** instance.
     struct Configuration: Sendable {
+        // MARK: - Properties
+
         /// The value indicates when a keychain item is accessible.
-        internal let access: AccessLevel
+        let access: AccessLevel
 
         /// The access group if any.
         ///
@@ -30,13 +32,15 @@ internal extension Keychain {
         ///
         /// - Requires:
         ///   A valid app **id** prefix (can be obtained from Apple Developer portal).
-        internal let accessGroup: String?
+        let accessGroup: String?
 
         /// The service name for saving and retrieving data from the **Keychain**.
         ///
         /// - Note:
         ///   Can be set to any string. Typically reflects the app's name.
-        internal let serviceName: String
+        let serviceName: String
+
+        // MARK: - Lifecycle
 
         /// Creates a **Keychain** configuration given the provided parameters.
         ///
@@ -44,7 +48,7 @@ internal extension Keychain {
         ///   - access:      The value indicates when a keychain item is accessible.
         ///   - accessGroup: The access group if any.
         ///   - serviceName: The service name.
-        internal init(access: Keychain.AccessLevel, accessGroup: String? = nil, serviceName: String) {
+        init(access: Keychain.AccessLevel, accessGroup: String? = nil, serviceName: String) {
             self.access = access
             self.accessGroup = accessGroup
             self.serviceName = serviceName

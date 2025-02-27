@@ -16,13 +16,19 @@
 
 import Foundation
 
+// MARK: - Keychain
+
 /// Provides and coordinates saving and retrieving data from the **Keychain**.
 public struct Keychain: Sendable {
-    /// The **Keychain** manager instance for saving, retrieving, and deleting **Keychain** data.
-    private let manager: Keychain.Manager
+    // MARK: - Properties
 
     /// The setup option of the **Keychain**.
     public let option: Keychain.SetupOption
+
+    /// The **Keychain** manager instance for saving, retrieving, and deleting **Keychain** data.
+    private let manager: Keychain.Manager
+
+    // MARK: - Lifecycle
 
     /// Creates a **Keychain** instance given the provided parameter(s).
     ///
@@ -34,17 +40,17 @@ public struct Keychain: Sendable {
     }
 }
 
-public extension Keychain {
+extension Keychain {
     /// Deletes item from the **Keychain**.
     ///
     /// - Parameters:
     ///   - item: The item to delete.
     ///
     /// - Throws: **KeychainError.unhandled** containing **OSStatus** code.
-    func delete(_ item: KeychainItem) throws {
+    public func delete(_ item: KeychainItem) throws {
         try manager.delete(item)
     }
-    
+
     /// Deletes all items of specified type.
     ///
     /// - Note:
@@ -61,7 +67,7 @@ public extension Keychain {
     ///   - type: A generic type of the item.
     ///
     /// - Throws: **KeychainError.unhandled** containing **OSStatus** code.
-    func deleteAll<T: KeychainItem>(ofType type: T.Type) throws {
+    public func deleteAll<T: KeychainItem>(ofType type: T.Type) throws {
         try manager.deleteAll(ofType: type)
     }
 
@@ -102,7 +108,7 @@ public extension Keychain {
     ///   - item: The item to save.
     ///
     /// - Throws: **KeychainError** if the operation fails.
-    func save(_ item: KeychainItem) throws {
+    public func save(_ item: KeychainItem) throws {
         try manager.save(item)
     }
 
@@ -115,8 +121,8 @@ public extension Keychain {
     /// - Throws: **KeychainError** if the operation fails.
     ///
     /// - Returns: A newly created item of T.Type if data is found for specified **idKey**, nil otherwise.
-    func item<T: KeychainItem>(ofType type: T.Type, idKey: String) throws -> T? {
-        return try manager.item(ofType: type, idKey: idKey)
+    public func item<T: KeychainItem>(ofType type: T.Type, idKey: String) throws -> T? {
+        try manager.item(ofType: type, idKey: idKey)
     }
 
     /// Returns an array of items for specified account and service group.
@@ -127,7 +133,7 @@ public extension Keychain {
     /// - Throws: **KeychainError** if the operation fails.
     ///
     /// - Returns: A newly created items array of T.Type if data is found, nil otherwise.
-    func items<T: KeychainItem>(ofType type: T.Type) throws -> [T]? {
-        return try manager.items(ofType: type)
+    public func items<T: KeychainItem>(ofType type: T.Type) throws -> [T]? {
+        try manager.items(ofType: type)
     }
 }

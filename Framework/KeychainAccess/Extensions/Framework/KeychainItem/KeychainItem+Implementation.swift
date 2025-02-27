@@ -16,31 +16,31 @@
 
 import Foundation
 
-public extension KeychainItem {
+extension KeychainItem {
     /// - Note:
     ///   The default valus is **nil**.
-    var comment: String? {
-        return nil
+    public var comment: String? {
+        nil
     }
 
     /// - Note:
     ///   The default valus is **nil**.
-    var description: String? {
-        return nil
+    public var description: String? {
+        nil
     }
 
     /// - Note:
     ///   The default valus is **false**.
-    static var isSynchronizable: Bool {
-        return false
+    public static var isSynchronizable: Bool {
+        false
     }
 
     /// - Note:
     ///   The default value is **.genericPassword**.
     ///
     ///   This **Keychain** framework only supports **kSecClassGenericPassword** for now.
-    static var storage: Keychain.Storage {
-        return .genericPassword
+    public static var storage: Keychain.Storage {
+        .genericPassword
     }
 
     /// - Note:
@@ -51,8 +51,8 @@ public extension KeychainItem {
     ///       return String(describing: self)
     ///   }
     ///   ```
-    static var typeKey: String {
-        return String(describing: self)
+    public static var typeKey: String {
+        String(describing: self)
     }
 
     /// - Note:
@@ -63,7 +63,7 @@ public extension KeychainItem {
     ///       return try PropertyListEncoder().encode(self)
     ///   }
     ///   ```
-    func data() throws -> Data {
-        return try PropertyListEncoder().encode(self)
+    public func data() throws -> Data {
+        try PropertyListEncoder().encode(self)
     }
 }
