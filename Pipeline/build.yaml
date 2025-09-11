@@ -24,7 +24,7 @@ steps:
    
    #!/bin/bash
    
-   file="./sonarqube-test-coverage.xml"
+   file="$(agent.builddirectory)/sonarqube-test-coverage.xml"
    
    if [ -f "$file" ] ; then
        rm "$file"
@@ -32,7 +32,8 @@ steps:
        echo "Error: File not found."
        exit 1
    fi
-  displayName: 'Delete Package.resolved file'
+  displayName: 'Delete coverage file'
+  continueOnError: true
 
    # SonarQube Prepare CLI Task
 - template: YAML/Builds/Security/SonarQubePrepareCLI.yml@templates # Template reference
@@ -47,7 +48,6 @@ steps:
         sonar.verbose=true
         sonar.log.level=debug
         sonar.language=swift
-        sonar.coverageReportPaths=$(agent.builddirectory)/sonarqube-test-coverage.xml
         sonar.swift.simulator=platform=iOS Simulator,name=iPad (10th generation)]
         sonar.sourceEncoding=UTF-8
         sonar.cfamily.compile-commands=compile_commands.json
