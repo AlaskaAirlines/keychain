@@ -12,7 +12,8 @@ trigger:
 - main
 
 pool:
-  name: 'macos-latest'
+  name: Azure Pipelines
+  vmImage: 'macos-latest'
 
 steps:
 - script: |
