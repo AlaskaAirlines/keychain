@@ -12,7 +12,7 @@ trigger:
 - main
 
 pool:
-  name: ACE iOS
+  name: 'macos-latest'
 
 steps:
 - script: |
