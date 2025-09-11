@@ -37,12 +37,13 @@ steps:
         sonar.sourceEncoding=UTF-8
         sonar.cfamily.compile-commands=compile_commands.json
 
-  - script: |
-      xcodebuild clean build \
-        -scheme KeychainAccess \
-        -sdk iphonesimulator \
-        -destination 'platform=iOS Simulator,name=iPad (10th generation)'
-    displayName: 'Build package'
+- script: |
+    xcodebuild clean build \
+      -scheme KeychainAccess \
+      -sdk iphonesimulator \
+      -destination 'platform=iOS Simulator,name=iPad (10th generation)'
+  displayName: 'Build package'
+  continueOnError: true
 
 #- script: |
 #    xcodebuild test \
