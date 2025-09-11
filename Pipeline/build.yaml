@@ -12,13 +12,27 @@ trigger:
 - main
 
 pool:
-  name: Azure Pipelines
-  vmImage: 'macos-15'
+  name: ACE iOS
 
 steps:
 - script: |
     swift package resolve
   displayName: 'Resolve Swift Package Dependencies'
+
+- bash: |
+   # Delete Package.resolved file
+   
+   #!/bin/bash
+   
+   file="./sonarqube-test-coverage.xml"
+   
+   if [ -f "$file" ] ; then
+       rm "$file"
+   else
+       echo "Error: File not found."
+       exit 1
+   fi
+  displayName: 'Delete Package.resolved file'
 
    # SonarQube Prepare CLI Task
 - template: YAML/Builds/Security/SonarQubePrepareCLI.yml@templates # Template reference
